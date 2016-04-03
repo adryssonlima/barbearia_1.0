@@ -1,0 +1,37 @@
+﻿.barb{
+	height: 200px;
+	width: 200px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cliente{
+	height: 150px;
+	width: 150px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 55px;
+}
+
+.statusb{
+	height: 50px;
+	width: 120px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.statusf{
+	height: 80px;
+	width: 180px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.direitos{
+	color: gray;
+	font-stretch: ultra-condensed;
+	font-weight: bold;
+	font-size: large;
+}
