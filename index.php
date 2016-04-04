@@ -1,5 +1,4 @@
-<?php 
-include_once "objeto.php";?>
+<?php include_once "objeto.php"; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +14,7 @@ include_once "objeto.php";?>
 	<div class="container" style="margin-top: 20px">
 		<div class="row">
 			<div class="col-md-12">
-				<?php if($_SESSION['bar']->statusBarbeiro($_SESSION['bar']->verificarFilaVazia())){ ?>
+				<?php if($bar->statusBarbeiro($bar->verificarFilaVazia())){ ?>
 					<div class="col-md-2">
 						<img align="center" class="statusb" src='imagens/barbOcupado.png'>
 					</div>
@@ -25,11 +24,11 @@ include_once "objeto.php";?>
 					</div>
 				<?php } ?>
 				
-				<?php if($_SESSION['bar']->getIndice()==0){ ?>
+				<?php if($bar->getIndice()==0){ ?>
 					<div class="col-md-10">
 						<img align="center" class="statusf" src='imagens/filaVazia.png'>
 					</div>
-				<?php }elseif($_SESSION['bar']->getIndice()==5){ ?>
+				<?php }elseif($bar->getIndice()==5){ ?>
 					<div class="col-md-10">
 						<img align="center" class="statusf" src='imagens/filacheia.png'>
 					</div>
@@ -43,7 +42,7 @@ include_once "objeto.php";?>
 		
 		<div class="row">
 			<div class="col-md-12">
-				<?php if($_SESSION['bar']->statusBarbeiro($_SESSION['bar']->verificarFilaVazia())){ ?>
+				<?php if($bar->statusBarbeiro($bar->verificarFilaVazia())){ ?>
 					<div class="col-md-2">
 						<img class="barb" src='imagens/barbeiroCortando.png'>
 					</div>
@@ -55,7 +54,7 @@ include_once "objeto.php";?>
 				<?php for($i=0; $i<5; $i++){ ?>
 					<div class="col-md-2">
 						<?php 
-							if($_SESSION['bar']->getFila($i) == 0)
+							if($bar->getFila($i) == 0)
 								echo "<img class='cliente' src='imagens/cadeiraVazia.jpg'>";
 							else
 								echo "<img class='cliente' src='imagens/cadeiraOcupada.jpg'>";
@@ -64,23 +63,26 @@ include_once "objeto.php";?>
 				<?php } ?>
 			</div>
 		</div>
-		<div class="row" style="margin-bottom: 70px">
+		
+		<div class="row">
 			<div class="col-md-12">
-				<div class="col-md-2" style="text-align: center">
 					<?php 
-						if($_SESSION['bar']->getCadeira() != 0){
-							$cad = $_SESSION['bar']->getCadeira();
+						if($bar->getCadeira() != 0){
+							echo "<div class='col-md-2' style='text-align: center; margin-bottom: 37px'>";
+							$cad = $bar->getCadeira();
 							echo "<button class='btn btn-info' type='button'>
 									Cliente <span class='badge'>$cad</span>
 								  </button>";						
+						}else{
+							echo "<div style='margin-bottom: 70px'>";
 						}
 					?>
 				</div>
 				<?php for($i=0; $i<5; $i++){ ?>
 					<div class="col-md-2" style="text-align: center">
 						<?php 
-							if($_SESSION['bar']->getFila($i) != 0){
-								$fila = $_SESSION['bar']->getFila($i);
+							if($bar->getFila($i) != 0){
+								$fila = $bar->getFila($i);
 								echo "<button class='btn btn-info' type='button'>
 										Cliente <span class='badge'>$fila</span>
 									  </button>";
@@ -92,7 +94,7 @@ include_once "objeto.php";?>
 			</div>
 		</div>
 		
-		<div class="row">
+		<div class="row" >
 			<div class="col-md-12">
 				<div class="col-md-2" style="text-align: center">
 					<form method="post">
@@ -111,7 +113,7 @@ include_once "objeto.php";?>
 						</div> 
 						<div class="panel-body" style="text-align: center; color: red"> 
 							<?php
-								$aviso=$_SESSION['bar']->getAviso();
+								$aviso = $bar->getAviso();
 								echo "<font size='12px'>$aviso</font>";
 							?>
 						</div> 
@@ -125,11 +127,11 @@ include_once "objeto.php";?>
 						<div class="panel-body"> 
 							<table class="table">
 								<?php 
-								$_SESSION['bar']->exibirBarb();
-								$log=$_SESSION['bar']->getLog();
-								$log= array_reverse($log);	
-									foreach($log as $indice)
-										 echo "<tr><td>$indice</td></tr>";
+									$bar->exibirBarb();
+									$log = $bar->getLog();
+									$log = array_reverse($log);	
+										foreach($log as $indice)
+											 echo "<tr><td>$indice</td></tr>";
 								?>
 						  	</table>
 						</div> 
