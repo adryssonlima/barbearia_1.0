@@ -9,10 +9,6 @@ session_start();
 	if(isset($_SESSION['bar'])){
 		$bar = $_SESSION['bar'];
 	}else{
-
-		#https://www.oficinadanet.com.br/artigo/php/ajax_envio_de_formulario_sem_refresh_com_jqueryphp
-		#http://www.arquivodecodigos.net/dicas/php-como-colocar-e-recuperar-objetos-em-sessoes-php-2217.html
-		
 		#imagens
 		$cadeiraVazia = "<img src='imagens/cadeiraVazia.jpg'>";
 		$cadeiraOcupada = "<img src='imagens/cadeiraOcupada.jpg'>";
@@ -25,7 +21,6 @@ session_start();
 
 		$_SESSION['bar'] = new Barbearia(0, 1, $cadeira, $fila, false, "Barbeiro Dormindo!");
 		$bar = $_SESSION['bar'];
-	
 	}
 	
 	if(isset($_POST['addCliente'])){
