@@ -7,7 +7,7 @@ session_start();
 	}
 		
 	if(isset($_SESSION['bar'])){
-		$_SESSION['bar'];
+		$bar = $_SESSION['bar'];
 	}else{
 
 		#https://www.oficinadanet.com.br/artigo/php/ajax_envio_de_formulario_sem_refresh_com_jqueryphp
@@ -24,17 +24,18 @@ session_start();
 		
 
 		$_SESSION['bar'] = new Barbearia(0, 1, $cadeira, $fila, false, "Barbeiro Dormindo!");
+		$bar = $_SESSION['bar'];
 	
 	}
 	
 	if(isset($_POST['addCliente'])){
-		$_SESSION['bar']->addCliente($_SESSION['bar']->stackOverflow());
-		$_SESSION['bar']->semaforo($_SESSION['bar']->verificarFilaVazia());
+		$bar->addCliente($bar->stackOverflow());
+		$bar->semaforo($bar->verificarFilaVazia());
 	}
 
 	if(isset($_POST['atenderCliente'])){
-		$_SESSION['bar']->atenderCliente($_SESSION['bar']->stackUnderflow());
-		$_SESSION['bar']->semaforo($_SESSION['bar']->verificarFilaVazia());
+		$bar->atenderCliente($bar->stackUnderflow());
+		$bar->semaforo($bar->verificarFilaVazia());
 	}
 
 ?>
