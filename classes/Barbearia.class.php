@@ -12,10 +12,10 @@ class Barbearia {
 	private $statusbarb;
 
 	#imagens
-	private $cadeiraVazia = "<img src='imagens/cadeiraVazia.jpg'>";
-	private $cadeiraOcupada = "<img src='imagens/cadeiraOcupada.jpg'>";
-	private $barbeiroCortando = "<img src='imagens/barbeiroCortando.png'>";
-	private $barbeiroDormindo = "<img src='imagens/barbeiroDormindo.png'>";
+	private $cadeiraVazia;
+	private $cadeiraOcupada;
+	private $barbeiroCortando;
+	private $barbeiroDormindo;
 	
 
 	public function __construct($indice, $cliente, $cadeira, $fila, $statusbarb, $log){
