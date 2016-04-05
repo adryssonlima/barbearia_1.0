@@ -104,7 +104,8 @@
 	  						<button type="submit" name="reiniciar" class="btn btn-warning">Reiniciar</button>
 						</div>
 					</form>
-					<span class="direitos">&copy; Copyright 2016<br>Adrysson & Joshua</span>
+					<span class="direitos">&copy; Copyright 2016<br>Adrysson & Joshua</span><br>
+					<a href="http://github.com/adryssonlima/barbearia">GitHub</a>
 				</div>	
 				<div class="col-md-4">
 					<div class="panel panel-success"> 
